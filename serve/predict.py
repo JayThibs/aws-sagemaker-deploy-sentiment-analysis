@@ -46,10 +46,10 @@ def model_fn(model_dir):
     print("Done loading model.")
     return model
 
-def input_fn(serialized_input_data, content_type):
+def input_fn(input_data, content_type):
     print('Deserializing the input data.')
     if content_type == 'text/csv':
-        data = serialized_input_data.decode('utf-8')
+        data = input_data
         return data
     raise Exception('Requested unsupported ContentType in content_type: ' + content_type)
 
