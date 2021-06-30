@@ -50,6 +50,7 @@ def input_fn(input_data, content_type):
     print('Deserializing the input data.')
     if content_type == 'text/csv':
         data = input_data
+        print('data: ', data)
         return data
     raise Exception('Requested unsupported ContentType in content_type: ' + content_type)
 
