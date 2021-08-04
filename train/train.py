@@ -25,7 +25,8 @@ def model_fn(model_dir):
 
     # Determine the device and construct the model.
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = LSTMClassifier(model_info['embedding_dim'], model_info['hidden_dim'], model_info['vocab_size'])
+    model = LSTMClassifier(model_info['embedding_dim'],
+                           model_info['hidden_dim'], model_info['vocab_size'])
 
     # Load the stored model parameters.
     model_path = os.path.join(model_dir, 'model.pth')
@@ -45,7 +46,8 @@ def model_fn(model_dir):
 def _get_train_data_loader(batch_size, training_dir):
     print("Get train data loader.")
 
-    train_data = pd.read_csv(os.path.join(training_dir, "train.csv"), header=None, names=None)
+    train_data = pd.read_csv(os.path.join(training_dir, "train.csv"),
+                             header=None, names=None)
 
     train_y = torch.from_numpy(train_data[[0]].values).float().squeeze()
     train_X = torch.from_numpy(train_data.drop([0], axis=1).values).long()
