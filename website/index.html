@@ -13,9 +13,11 @@
          function submitForm(oFormElement) {
              var xhr = new XMLHttpRequest();
              xhr.onload = function() {
+                 console.log(xhr.responseText)
                  var result = parseFloat(xhr.responseText);
                  var resultElement = document.getElementById('result');
-                 if (result == 0) {
+                 console.log(result);
+                 if (result == 0.0) {
                      resultElement.className = 'bg-danger';
                      resultElement.innerHTML = 'Your review was NEGATIVE!';
                  } else {
@@ -24,8 +26,18 @@
                  }
              }
              xhr.open (oFormElement.method, oFormElement.action, true);
-             var review = document.getElementById('review');
-             xhr.send (review.value);
+             var review_string = document.getElementById('review_string');
+             // console.log(typeof review_string.value);
+             // console.log(review_string.value);
+             // var review_object = {'body': JSON.stringify(review_string.value)};
+             // var review_json = {
+             //    FunctionName: 'review',
+             //    Payload: review_object
+             // };
+             // var review_json = {"body": JSON.stringify(review_string.value)};
+             // console.log(review_json);
+             // review_string = {'body': JSON.stringify(review_string.value)}
+             xhr.send(review_string.value);
              return false;
          }
         </script>
@@ -40,8 +52,8 @@
                   action="https://fwqg9kted1.execute-api.us-east-1.amazonaws.com/sentiment_analysis_prod/"
                   onsubmit="return submitForm(this);" >                     <!-- HERE IS WHERE YOU NEED TO ENTER THE API URL -->
                 <div class="form-group">
-                    <label for="review">Review:</label>
-                    <textarea class="form-control"  rows="5" id="review">Please write your review here.</textarea>
+                    <label for="review_string">Review:</label>
+                    <textarea class="form-control"  rows="5" id="review_string">Please write your review here.</textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
