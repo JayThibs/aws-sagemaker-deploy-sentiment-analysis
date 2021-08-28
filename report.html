@@ -15582,13 +15582,13 @@ Starting  neg  files
 </blockquote>
 <p><strong>TODO:</strong> Make sure that you include the edited <code>index.html</code> file in your project submission.</p>
 <h3 id="Information-regarding-our-Webapp,-API-Gateway,-and-Lambda">Information regarding our Webapp, API Gateway, and Lambda<a class="anchor-link" href="#Information-regarding-our-Webapp,-API-Gateway,-and-Lambda">&#182;</a></h3><p>While trying to get our webapp to work, I ran into some issues when it came to sending the post request and receiving a prediction for our input review. It worked perfectly with Insomnia (similar to Postman), but it was not working at all in the index file.</p>
-<p><img src="./imgs/insomnia_test.png" alt="Insomnia"></p>
+<p><img src="https://raw.githubusercontent.com/JayThibs/aws-sagemaker-deploy-sentiment-analysis/main/imgs/insomnia_test.png" alt="Insomnia"></p>
 <p>One of the things I needed to do was to install a CORS web browser extension so that the API could be accessed from the browser. After trying many things with the index file, but I kept getting either 400 Error or 415 Error.</p>
 <p>When I was outputting the "result" in index.html to the console, I get NaN.</p>
 <p>Anyway, the issue was resolved by ticking the "Use Lambda Proxy integration" in API Gateway "POST - Integration Request" page.</p>
 <p>Unfortunately, this is may not be the ideal fix because Insomnia did not need this to work. I'd prefer to understand how to make it work without ticking the box. If you don't tick the box, you can scroll down and find "Mapping Templates." I believe this is either what I need to fix OR I need to modify the index.html file to send the appropriate post request (matching json format). I think it should be related to the latter, but I'm going to move forward with the course for now.</p>
-<p><img src="./imgs/api_gateway_post_method_execution.png" alt="post_method"></p>
-<p><img src="./imgs/api_gateway_post_integration_request.png" alt="post_method"></p>
+<p><img src="https://raw.githubusercontent.com/JayThibs/aws-sagemaker-deploy-sentiment-analysis/main/imgs/api_gateway_post_method_execution.png" alt="post_method"></p>
+<p><img src="https://raw.githubusercontent.com/JayThibs/aws-sagemaker-deploy-sentiment-analysis/main/imgs/api_gateway_post_integration_request.png" alt="post_method"></p>
 
 </div>
 </div>
@@ -15606,8 +15606,8 @@ Starting  neg  files
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p><img src="./imgs/webapp-positive.png" alt="Positive"></p>
-<p><img src="./imgs/webapp-negative.png" alt="Negative"></p>
+<p><img src="https://raw.githubusercontent.com/JayThibs/aws-sagemaker-deploy-sentiment-analysis/main/imgs/webapp-positive.png" alt="Positive"></p>
+<p><img src="https://raw.githubusercontent.com/JayThibs/aws-sagemaker-deploy-sentiment-analysis/main/imgs/webapp-negative.png" alt="Negative"></p>
 
 </div>
 </div>
