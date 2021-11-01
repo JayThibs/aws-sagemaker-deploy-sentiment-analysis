@@ -4,9 +4,13 @@ Training and deploying sentiment analysis models with deep learning using Amazon
 
 Here's the simple web app that sends a request to the deployed model and returns the sentiment of the text:
 
-![Positive](./imgs/webapp-positive.png)
+<img src="./imgs/webapp-positive.png" alt="webapp-positive.png" width="700" />
 
-![Negative](./imgs/webapp-negative.png)
+<img src="./imgs/webapp-negative.png" alt="webapp-positive.png" width="700" />
+
+This model was deployed with the help of Lambda and API Gateway. This is what the structure looks like:
+
+![Negative](https://raw.githubusercontent.com/JayThibs/aws-sagemaker-deploy-sentiment-analysis/395a5c47495f6a78d801eafc864166d0b914a965/Web%20App%20Diagram.svg)
 
 ## Notes Regarding the Project
 
