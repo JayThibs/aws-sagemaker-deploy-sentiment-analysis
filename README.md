@@ -1,4 +1,4 @@
-# Training and Deploying a Sentiment Analysis PyTorch Model in Amazon SageMaker
+# Training and Deploying a Sentiment Analysis PyTorch and Hugging Face Models in Amazon SageMaker
 
 Training and deploying sentiment analysis models with deep learning using Amazon SageMaker. A BERT model was trained using distributed training with the help of Hugging Face.
 
